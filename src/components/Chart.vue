@@ -1,18 +1,20 @@
 <template>
   <div class="hello">
-    <BarChart :chart-data="datacollection" />
+    <BarChart :chart-data="datacollection" class="graph" />
   </div>
 </template>
 
 <script>
 import BarChart from "./BarChart.js";
 export default {
+  data() {
+    return {
+      datacollection: null,
+    };
+  },
   components: {
     BarChart,
   },
-  data: () => ({
-    datacollection: null,
-  }),
   mounted() {
     this.fillData();
   },
@@ -20,6 +22,7 @@ export default {
     fillData() {
       this.datacollection = {
         labels: ["A", "B", "C", "D"],
+        maxWidth: "50px",
         datasets: [
           {
             label: "データセットラベルA",
@@ -28,7 +31,6 @@ export default {
             pointBackgroundColor: "white",
             borderWidth: 1,
             pointBorderColor: "#249EBF",
-            width: "600px",
           },
         ],
       };
