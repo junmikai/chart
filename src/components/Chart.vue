@@ -7,10 +7,6 @@
 <script>
 import BarChart from "./BarChart.js";
 export default {
-  name: "Chart",
-  props: {
-    msg: String,
-  },
   components: {
     BarChart,
   },
@@ -28,6 +24,11 @@ export default {
           {
             label: "データセットラベルA",
             data: [20, 30, 40, 50],
+            backgroundColor: "#f87979",
+            pointBackgroundColor: "white",
+            borderWidth: 1,
+            pointBorderColor: "#249EBF",
+            width: "600px",
           },
         ],
       };
